@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lec001 {
+public class Lec001_FindSet {
 
     public static class TreeNode {
         int val = 0;
@@ -163,6 +163,7 @@ public class Lec001 {
         printKDown(node.right, k - 1, ans, blocker);
     }
 
+    // https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         ArrayList<TreeNode> nodes = nodeToRootPath(root, target.val);
         List<Integer> ans = new ArrayList<>();
