@@ -139,8 +139,7 @@ public class Lec001 {
         allSingleChildParentInBinaryTree_(root, ans);
         return ans;
     }
-
-    
+ 
     public static int count = 0;
     public static int countAllSingleChildParent(TreeNode root){
         if(root == null || (root.left == null && root.right == null)) return 0;
@@ -153,15 +152,15 @@ public class Lec001 {
         return count;
     }
     
-    private void printKDist(TreeNode node, int k, List<Integer> ans, TreeNode blocker) {
+    private void printKDown(TreeNode node, int k, List<Integer> ans, TreeNode blocker) {
         if(node == null || node == blocker) return;
         if(k == 0) {
             ans.add(node.val);
             return;
         }
         
-        printKDist(node.left, k - 1, ans, blocker);
-        printKDist(node.right, k - 1, ans, blocker);
+        printKDown(node.left, k - 1, ans, blocker);
+        printKDown(node.right, k - 1, ans, blocker);
     }
 
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
@@ -169,13 +168,42 @@ public class Lec001 {
         List<Integer> ans = new ArrayList<>();
         
         for(int i = 0; i < nodes.size(); i++){
-            printKDist(nodes.get(i), k - i, ans, i == 0 ? null : nodes.get(i - 1));
+            printKDown(nodes.get(i), k - i, ans, i == 0 ? null : nodes.get(i - 1));
         }
-        return null;
+        return ans;
     }
 
-
-    public static void main(String[] args) {
-
+    private int distanceKII_(TreeNode root, TreeNode target, int k, List<Integer> list){
+        if(root == null) return -1;
+        if(root.val == target.val){
+            printKDown(root, k, list, null);
+            return 1;
+        }
+        int resLeft = distanceKII_(root.left, target, k, list);
+        if(resLeft > 0){
+            printKDown(root, k - resLeft, list, root.left);
+            return resLeft + 1;
+        }
+        int resRight = distanceKII_(root.right, target, k, list);
+        if(resRight > 0){
+            printKDown(root, k - resRight, list, root.right);
+            return resRight + 1;
+        }
+        return -1;
     }
+
+    /* Better Method (We doesn't need to store node to Root Path) Solely based on find function. */
+    public List<Integer> distanceKII(TreeNode root, TreeNode target, int k){
+        List<Integer> list = new ArrayList<>();
+        distanceKII_(root, target, k, list);
+        return list;
+    }
+
 }
+
+
+// Find Set
+// View Set
+// Diameter & Sum Set
+// Construction Set
+// Morris and Traversal Set
