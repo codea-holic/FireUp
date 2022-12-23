@@ -1,0 +1,64 @@
+---
+Trees:
+  BinaryTree: 
+    - ques: size()
+      desc: "Count the size of a Binary Tree."
+
+    - ques: height()
+      desc: "Find out the height of Binary Tree"
+    
+    - ques: maximum()
+      desc: "Find out the maximum no. in a Binary Tree"
+
+    - ques: minimum()
+      desc: "Find out the minimum no. in a Binary Tree"
+
+    - ques: find()**
+      desc: "Find the targeted value"
+
+    - ques: nodeToRootPath()
+      desc: "Return the node to Root Path (Dependency find())"
+    
+    - ques: NodeToAllLeafPaths()
+      desc: 
+
+    - ques: allSingleChildParentInBinaryTree()
+      desc: "Return the ArrayList of Nodes of Parents which has only single child"
+
+    - ques: distanceK()
+      desc: "Print all the nodes which are K distance apart from the given Node"
+
+    - ques: distanceKII()
+      desc: "Alternative method"
+      link:  https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
+
+    - ques: BurningTreeWithWater()**
+      desc: "Return the arrayList of arrayList of all nodes with burn at t min"
+
+    - ques: BurningTreeNodeWithWater()
+      desc: "Upgraded version of BurningTreeWithWater()"
+      link: https://practice.geeksforgeeks.org/problems/burning-tree/1
+    
+    - ques: lowestCommonAncestor()
+      desc: "Lowest Common Ancestor in which Node P and Node Q may or may not present"
+      link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+
+    - ques: PathSum()
+      desc: Path Sum of Binary Tree (leetcode 112)
+      link:
+  
+  BinarySearchTree:
+    - ques: size()
+
+    - ques: height()
+
+    - ques: maximum()
+      desc: Maximum function in Binary Search tree (Try to do with iterative method)
+    
+    - ques: minimum()
+      desc:
+
+    - ques: find()
+      desc: 
+
+    

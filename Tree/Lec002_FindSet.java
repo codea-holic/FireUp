@@ -89,8 +89,24 @@ public class Lec002_FindSet {
     }
 
     // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+    TreeNode LCANode = null;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        lowestCommonAncestor_(root, p, q);
+        return LCANode;
+    }
 
+    public boolean lowestCommonAncestor_(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null) return false;
+        boolean selfPresent = (root == p || root == q);
+
+        boolean leftPresent = lowestCommonAncestor_(root.left, p, q);
+        boolean rightPresent = lowestCommonAncestor_(root.right, p, q);
+
+        if(leftPresent && rightPresent || leftPresent && selfPresent || rightPresent && selfPresent){
+            LCANode = root;
+        }
+
+        return leftPresent || rightPresent || selfPresent;
     }
 
 }
