@@ -59,6 +59,29 @@ Trees:
       desc:
 
     - ques: find()
-      desc: 
+      desc:
+
+    - ques: nodeToRootPath()
+      desc:
+
+    - ques: lowestCommonAncestor()
+      desc:
+
+  Traversals:
+    - MorrisTraversals:
+      - ques: inOrderMorrisTraversal()
+        desc:
+
+      - ques: preOrderMorrisTraversal()
+        desc:
+      
+      - ques: isValidBST()
+        desc: Leetcode 98, Pass min and max range for left and right, Try with III Methods (Morris, Stack, ...)
+        link: https://leetcode.com/problems/validate-binary-search-tree/
+
+      - ques: BSTIterator()
+        desc: Leetcode 173, III Methods (Morris, Stack, ...)
+        link: https://leetcode.com/problems/binary-search-tree-iterator/
+
 
     
